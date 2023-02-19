@@ -11,8 +11,8 @@ public class RestApi {
         HttpClient http = new HttpClient();
         String host = "http://[::1]:3000/";
         String endpoint = "properties";
-        String url = host + endpoint;
-        String rest = http.get(url);
+        String urlStr = host + endpoint;
+        String rest = http.get(urlStr);
         return rest;
     }
 }

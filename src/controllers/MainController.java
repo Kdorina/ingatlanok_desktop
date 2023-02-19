@@ -13,19 +13,19 @@ import views.MainConsole;
 public class MainController {
     MainConsole mainConsole;
 
-    public MainController(){
+    public MainController() {
         this.mainConsole = new MainConsole();
         this.showProp();
     }
 
-    private void showProp(){
+    private void showProp() {
         RestApi restApi = new RestApi();
         String rest = restApi.getProperties();
         ArrayList<Property> propList = convertStringToArray(rest);
         this.mainConsole.showProperties(propList);
     }
 
-    private ArrayList<Property> convertStringToArray(String text){
+    private ArrayList<Property> convertStringToArray(String text) {
         ArrayList<Property> propList = null;
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
