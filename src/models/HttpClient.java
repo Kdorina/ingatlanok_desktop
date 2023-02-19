@@ -15,8 +15,8 @@ import java.util.Scanner;
 public class HttpClient {
 
     int responseCode;
-    public HttpClient(){
 
+    public HttpClient(){
     }
 
     public String get(String urlStr) {
@@ -47,9 +47,9 @@ public class HttpClient {
         try {
             result = tryPost(url, data, headers);
         } catch (IOException e) {
-            String msg = "Hiba! A REST API elérés sikertelen!";
-            System.err.println(msg);
-            result = msg;
+            String message = "Hiba! A REST API elérés sikertelen!";
+            System.err.println(message);
+            result = message;
         }
         return result;
     }

@@ -15,22 +15,22 @@ public class MainController {
 
     public MainController() {
         this.mainConsole = new MainConsole();
-        this.showProp();
+        this.showPropertie();
     }
 
-    private void showProp() {
+    private void showPropertie() {
         RestApi restApi = new RestApi();
         String rest = restApi.getProperties();
-        ArrayList<Property> propList = convertStringToArray(rest);
-        this.mainConsole.showProperties(propList);
+        ArrayList<Property> propertieList = convertStringToArray(rest);
+        this.mainConsole.showProperties(propertieList);
     }
 
     private ArrayList<Property> convertStringToArray(String text) {
-        ArrayList<Property> propList = null;
+        ArrayList<Property> propertieList = null;
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
-        Property[] propArray = gson.fromJson(text, Property[].class);
-        propList = new ArrayList<>(Arrays.asList(propArray));
-        return propList;
+        Property[] propertieArray = gson.fromJson(text, Property[].class);
+        propertieList = new ArrayList<>(Arrays.asList(propertieArray));
+        return propertieList;
     }
 }
