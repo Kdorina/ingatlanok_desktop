@@ -12,7 +12,7 @@ public class RestApi {
         String host = "http://[::1]:3000/";
         String endpoint = "properties";
         String url = host + endpoint;
-        String res = http.get(url);
-        return res;
+        String rest = http.get(url);
+        return rest;
     }
 }
